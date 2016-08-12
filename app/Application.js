@@ -1,5 +1,5 @@
-"use strict";
 /// <reference path="../typings/index.d.ts"/>
+"use strict";
 const React = require('react');
 const react_native_1 = require('react-native');
 const LoginManager_1 = require('./Manager/Login/LoginManager');
@@ -25,7 +25,6 @@ class Application extends React.Component {
                     case "MainScreen":
                         return React.createElement(MainScreen_1.default, {navigator: navigator});
                     default:
-                        return React.createElement(route.component, {navigator: navigator});
                 }
             }
         }}));

@@ -1,4 +1,5 @@
 /// <reference path="../typings/index.d.ts"/>
+
 import * as React from 'react';
 import * as Firebase from 'firebase';
 import { View, Text, TextInput, Navigator } from 'react-native';
@@ -30,7 +31,7 @@ export default class Application extends React.Component<Props, State> {
               case "MainScreen":
                 return <MainScreen navigator={navigator}/>
               default:
-                return <route.component navigator={navigator}/>
+                // return <route.component navigator={navigator}/>
             }
           }
         }

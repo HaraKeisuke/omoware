@@ -1,0 +1,49 @@
+{
+    "compilerOptions": {
+        "target": "es6",
+        "module": "commonjs",
+        "declaration": false,
+        "noImplicitAny": false,
+        "removeComments": false,
+        "noLib": false,
+        "preserveConstEnums": true,
+        "sourceMap": true,
+        "suppressImplicitAnyIndexErrors": true,
+        "outDir": "./app",
+        "jsx": "react"
+    },
+    "formatCodeOptions": {
+        "indentSize": 2,
+        "tabSize": 4,
+        "newLineCharacter": "\r\n",
+        "convertTabsToSpaces": true,
+        "insertSpaceAfterCommaDelimiter": true
+    },
+    "exclude": [],
+    "compileOnSave": false,
+    "filesGlob": [
+        "./src/**/*.{ts,tsx}",
+        "!./src/typings/**/*.ts"
+    ],
+    "files": [
+        "./src/Application.tsx",
+        "./src/Common/Header.tsx",
+        "./src/Common/Templete.tsx",
+        "./src/Component/Button/FacebookButton.tsx",
+        "./src/Component/Modal/SearchModal.tsx",
+        "./src/Manager/Core/PlatformManager.ts",
+        "./src/Manager/Core/StorageManager.ts",
+        "./src/Manager/FirebaseManager/config.ts",
+        "./src/Manager/FirebaseManager/FirebaseManager.ts",
+        "./src/Manager/Initializer/Initializer.ts",
+        "./src/Manager/Login/LoginManager.ts",
+        "./src/Manager/SettingManager/SettingData.ts",
+        "./src/Manager/SettingManager/SettingManager.ts",
+        "./src/Manager/SettingManager/UserData.ts",
+        "./src/View/LoginView.tsx",
+        "./src/View/MainScreen.tsx"
+    ],
+    "atom": {
+        "rewriteTsconfig": true
+    }
+}

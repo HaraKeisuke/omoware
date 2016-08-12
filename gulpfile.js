@@ -3,7 +3,7 @@ var typescript = require('gulp-typescript');
 var watch = require('gulp-watch');
 var gulp = require('gulp');
 
-var tsProject = typescript.createProject('./src/tsconfig.json');
+var tsProject = typescript.createProject('./tsconfig.json');
 var appDir = './app/';
 var tsFiles = './src/**/*.{ts,tsx}';
 var resources = './src/**/*.{html,js,css,mp3,wav,jpg,png,jpeg,gif}';
