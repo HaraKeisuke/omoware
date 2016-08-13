@@ -6,6 +6,9 @@ class FacebookManager {
     getPermissions() {
         return this.permissions;
     }
+    searchUserFromName(name) {
+        fetch();
+    }
     static getInstance() {
         if (!this.instance) {
             this.instance = new FacebookManager();
