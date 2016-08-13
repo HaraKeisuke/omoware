@@ -9,7 +9,7 @@ class MainScreen extends React.Component {
         this.state = { isSearchModalShow: false };
     }
     render() {
-        return (React.createElement(react_native_1.View, null, React.createElement(Header_1.default, {rightComponent: React.createElement(react_native_1.TouchableOpacity, {onPress: this.toggleSearchModal.bind(this)}, React.createElement(react_native_1.Text, null, "+"))}), React.createElement(react_native_1.Text, null, "ABC"), React.createElement(SearchModal_1.default, {navigator: this.props.navigator, isShow: this.state.isSearchModalShow, onClose: this.toggleSearchModal.bind(this)})));
+        return (React.createElement(react_native_1.View, null, React.createElement(Header_1.default, {rightComponent: React.createElement(react_native_1.TouchableOpacity, {onPress: this.toggleSearchModal.bind(this)}, React.createElement(react_native_1.View, {style: { padding: 10 }}, React.createElement(react_native_1.Text, null, "+")))}), React.createElement(react_native_1.Text, null, "ABC"), React.createElement(SearchModal_1.default, {navigator: this.props.navigator, isShow: this.state.isSearchModalShow, onClose: this.toggleSearchModal.bind(this)})));
     }
     toggleSearchModal() {
         console.log("モーダル表示");

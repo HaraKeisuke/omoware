@@ -17,3 +17,11 @@ export default class FacebookManager {
     return this.instance;
   }
 }
+
+interface FacebookUser {
+  id: string;
+  name: string;
+  age: number;
+  live: string;
+  work: string;
+}

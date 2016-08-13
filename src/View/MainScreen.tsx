@@ -16,7 +16,9 @@ export default class MainScreen extends React.Component<Props, State> {
         <Header
           rightComponent={
             <TouchableOpacity　onPress={this.toggleSearchModal.bind(this)}>
-              <Text>+</Text>
+              <View style={{ padding: 10 }}>
+                <Text>+</Text>
+              </View>
             </TouchableOpacity>
           }/>
         <Text>ABC</Text>
