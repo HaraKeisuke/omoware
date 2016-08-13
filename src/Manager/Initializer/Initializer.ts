@@ -1,12 +1,18 @@
 import FirebaseManager from '../FirebaseManager/FirebaseManager';
+import LoginManager from '../Login/LoginManager';
 
 export default class Initializer {
   constructor() {
 
   }
 
-  initialize(){
-    return Promise.resolve();
+  initialize() {
+    return Promise.all([
+      FirebaseManager.getInstance().initialize(),
+      LoginManager.getInstance().initialize()
+    ]).catch((e) => {
+      console.log(e);
+    })
   }
 
 

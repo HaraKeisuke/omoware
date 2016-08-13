@@ -1,24 +1,43 @@
-import * as Firebase from 'firebase';
+// import * as Firebase from 'firebase/firebase-node';
 import FirebaseManager from '../FirebaseManager/FirebaseManager';
+import StorageManager from '../Core/StorageManager';
 
+var Firebase = require("firebase");
 
 export default class LoginManager {
-  user: Firebase.User = null;
+  user: any = null;
+  userId: string = null;
   token: string = null;
 
   constructor() {
 
   }
 
-  login(data: FacebookLoginData) {
-    // console.log("ログインしました", data);
-    this.token = data.credentials.token;
+  initialize() {
+    return StorageManager.getInstance().get("Credential").then((data) => {
+      if (data) {
+        this.user = data.user;
+        this.token = data.token;
+        this.userId = data.userId;
+      }
+      return Promise.resolve();
+    }).catch((e) => {
+      return Promise.reject(e);
+    });
+  }
 
+  login(data: FacebookLoginData) {
+    this.userId = data.credentials.userId;
+    this.token = data.credentials.token;
     let credential = Firebase.auth.FacebookAuthProvider.credential(data.credentials.token);
     return Firebase.auth().signInWithCredential(credential).then((user) => {
       // console.log("ログインに成功", user);
       this.user = user;
-      return Promise.resolve();
+      return StorageManager.getInstance().set("Credential", {
+        user: this.user,
+        userId: this.userId,
+        token: this.token
+      })
     }).catch((e) => {
       console.log("ログイン失敗", e);
       return Promise.reject(e);
@@ -27,7 +46,14 @@ export default class LoginManager {
 
   logout() {
     console.log("ログアウトしました");
+    this.clearCash();
     FirebaseManager.getInstance().firebase.auth().signOut();
+  }
+
+  clearCash() {
+    this.user = null;
+    this.userId = null;
+    this.token = null;
   }
 
   facebook() {
@@ -35,7 +61,7 @@ export default class LoginManager {
   }
 
   isLogin() {
-    return true;
+    return this.token;
   }
 
 

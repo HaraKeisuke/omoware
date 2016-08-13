@@ -38,9 +38,12 @@
         "./src/Manager/FirebaseManager/FirebaseManager.ts",
         "./src/Manager/Initializer/Initializer.ts",
         "./src/Manager/Login/LoginManager.ts",
+        "./src/Manager/Omoi/OmoiManager.ts",
         "./src/Manager/SettingManager/SettingData.ts",
         "./src/Manager/SettingManager/SettingManager.ts",
         "./src/Manager/SettingManager/UserData.ts",
+        "./src/Utils/ObjectUtils.ts",
+        "./src/Utils/StringUtils.ts",
         "./src/View/LoginView.tsx",
         "./src/View/MainScreen.tsx"
     ],

@@ -12,12 +12,12 @@ export default class Header extends React.Component<Props, State> {
 
   render() {
     return (
-      <View style={{ borderBottomWidth: 1 }}>
+      <View style={{ borderBottomWidth: 1, backgroundColor: "#ffffff" }}>
         <StatusBar
           hidden={false}
           animated={true}
           />
-        <View style={{ height: 20, flex: 1, backgroundColor: '#FFEBF1' }}></View>
+        <View style={{ height: 20, flex: 1, }}></View>
         <View style={this.styles.header}>
           <View style={this.styles.left}>
             {this.props.leftComponent}

@@ -1,17 +1,19 @@
-import * as Firebase from 'firebase';
+// import * as Firebase from 'firebase/firebase-node';
 import config from "./config";
 
-var firebase = require("firebase");
+var Firebase = require("firebase");
 
 export default class FirebaseManager {
-  firebase: Firebase.app.App = null;
-  provider: Firebase.auth.FacebookAuthProvider = null;
+  firebase = null;
+  provider = null;
   constructor() {
     this.firebase = Firebase.initializeApp(config);
     this.provider = new Firebase.auth.FacebookAuthProvider();
   }
 
-
+  initialize() {
+    return Promise.resolve();
+  }
 
 
   static instanse: FirebaseManager = null;

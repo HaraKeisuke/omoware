@@ -36,7 +36,7 @@ class Header extends React.Component {
     }
     ;
     render() {
-        return (React.createElement(react_native_1.View, {style: { borderBottomWidth: 1 }}, React.createElement(StatusBar, {hidden: false, animated: true}), React.createElement(react_native_1.View, {style: { height: 20, flex: 1, backgroundColor: '#FFEBF1' }}), React.createElement(react_native_1.View, {style: this.styles.header}, React.createElement(react_native_1.View, {style: this.styles.left}, this.props.leftComponent), React.createElement(react_native_1.View, {style: this.styles.center}, this.props.centerComponent), React.createElement(react_native_1.View, {style: this.styles.right}, this.props.rightComponent))));
+        return (React.createElement(react_native_1.View, {style: { borderBottomWidth: 1, backgroundColor: "#ffffff" }}, React.createElement(StatusBar, {hidden: false, animated: true}), React.createElement(react_native_1.View, {style: { height: 20, flex: 1, }}), React.createElement(react_native_1.View, {style: this.styles.header}, React.createElement(react_native_1.View, {style: this.styles.left}, this.props.leftComponent), React.createElement(react_native_1.View, {style: this.styles.center}, this.props.centerComponent), React.createElement(react_native_1.View, {style: this.styles.right}, this.props.rightComponent))));
     }
 }
 Object.defineProperty(exports, "__esModule", { value: true });
