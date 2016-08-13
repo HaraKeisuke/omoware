@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { View, Text, TextInput } from 'react-native';
 import LoginManager, { FacebookLoginData } from '../../Manager/Login/LoginManager';
-
+import FacebookManager from '../../Manager/Facebook/FacebookManager';
 import MainScreen from '../../View/MainScreen';
 
 var {FBLogin, FBLoginManager} = require('react-native-facebook-login');
@@ -18,7 +18,7 @@ export default class FacebookButton extends React.Component<Props, State> {
     return (
       <FBLogin style={{ marginBottom: 10, }}
         ref={(fbLogin) => { this.fbLogin = fbLogin } }
-        permissions={["email", "user_friends", "public_profile"]}
+        permissions={FacebookManager.getInstance().getPermissions()}
         loginBehavior={FBLoginManager.LoginBehaviors.Native}
         onLogin={(data: FacebookLoginData) => {
           LoginManager.getInstance().login(data).then(() => {

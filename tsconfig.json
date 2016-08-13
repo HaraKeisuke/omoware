@@ -33,6 +33,7 @@
         "./src/Component/Modal/SearchModal.tsx",
         "./src/Manager/Core/PlatformManager.ts",
         "./src/Manager/Core/StorageManager.ts",
+        "./src/Manager/Facebook/FacebookManager.ts",
         "./src/Manager/FirebaseManager/config.ts",
         "./src/Manager/FirebaseManager/FirebaseManager.ts",
         "./src/Manager/Initializer/Initializer.ts",

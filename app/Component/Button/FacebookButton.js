@@ -1,6 +1,7 @@
 "use strict";
 const React = require('react');
 const LoginManager_1 = require('../../Manager/Login/LoginManager');
+const FacebookManager_1 = require('../../Manager/Facebook/FacebookManager');
 const MainScreen_1 = require('../../View/MainScreen');
 var { FBLogin, FBLoginManager } = require('react-native-facebook-login');
 class FacebookButton extends React.Component {
@@ -10,7 +11,7 @@ class FacebookButton extends React.Component {
     }
     render() {
         let _this = this;
-        return (React.createElement(FBLogin, {style: { marginBottom: 10, }, ref: (fbLogin) => { this.fbLogin = fbLogin; }, permissions: ["email", "user_friends", "public_profile"], loginBehavior: FBLoginManager.LoginBehaviors.Native, onLogin: (data) => {
+        return (React.createElement(FBLogin, {style: { marginBottom: 10, }, ref: (fbLogin) => { this.fbLogin = fbLogin; }, permissions: FacebookManager_1.default.getInstance().getPermissions(), loginBehavior: FBLoginManager.LoginBehaviors.Native, onLogin: (data) => {
             LoginManager_1.default.getInstance().login(data).then(() => {
                 this.props.navigator.push({
                     title: "MainScreen",
