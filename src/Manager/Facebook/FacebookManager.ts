@@ -16,8 +16,6 @@ export default class FacebookManager {
     }).then((obj) => {
       console.log("結果" + JSON.stringify(obj));
 
-
-
       return Promise.resolve(obj.data);
     }).catch((e) => {
       return Promise.reject(e);
